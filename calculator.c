@@ -1,6 +1,7 @@
 //Marcel Plakolb
 //2AHIF
-#include<stdio.h>
+#include<float.h>
+#include <stdio.h>
 
 int main(int argc, char[]* argv) {
 double op1;
@@ -42,10 +43,10 @@ double getOperants(double* op1, double* op2)
 {
 
 	printf("Please enter the first operant: ");
-	scanf("%lf", op1);
+	scanf("%lf", &op1);
 
 	printf("Please enter the second operant: ");
-	scanf("%lf", op2);
+	scanf("%lf", &op2);
 }
 
 void startOperation()
@@ -53,41 +54,41 @@ void startOperation()
 	switch(Choice())
 	{
 		case 1:
-			Add();
+			add(&op1,&op2);
 			break;
 
 		case 2:
-		Subtract();
+		subtract(&op1,&op2);
 		break;
 
 		case 3:
-			Multiply();
+			multiply(&op1,&op2);
 			break;
 
 		case 4:
-			Divide();
+			divide(&op1,&op2);
 			break;
 
 		default:
 			break;
 }
 
-int Add()
+int add(int* op1, int* op2)
 {
 	return *op1 + *op2;
 }
 
-int Subtract()
+int subtract(int* op1, int* op2)
 {
 	return *op1 - *op2;
 }
 
-int Multiply()
+int multiply(int* op1, int* op2)
 {
 	return *op1 * *op2;
 }
 
-int Divide()
+int divide(int* op1, int* op2)
 {
 	if(*op1 == 0 || *op2 == 0)
 	{
@@ -97,3 +98,4 @@ int Divide()
 	return *op1 / *op2;
 }
 }
+//
